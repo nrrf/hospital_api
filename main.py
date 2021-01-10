@@ -4,6 +4,7 @@ from fastapi import HTTPException
 from routers.hospital_router import router as router_hospital
 from routers.user_router import router as router_user
 from routers.patient_router import router as router_patient 
+from routers.cita_router import router as router_cita
 from fastapi.middleware.cors import CORSMiddleware
 
 api = FastAPI() 
@@ -20,3 +21,4 @@ allow_credentials=True, allow_methods=["*"], allow_headers=["*"],
 api.include_router(router_user)
 api.include_router(router_patient)
 api.include_router(router_hospital)
+api.include_router(router_cita)

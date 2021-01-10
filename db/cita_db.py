@@ -6,7 +6,7 @@ class CitaInDB(Base):
     __tablename__ = "cita"
     
     idcita = Column(Integer, primary_key=True, autoincrement=True)
-    idhospital = Column(String, ForeignKey("hospital.idhospital"))
-    idpatient = Column(String, ForeignKey("patient.idpatient"))
-    fecha = Column(Date)
+    idhospital = Column(Integer, ForeignKey("hospital.idhospital"))
+    idpatient = Column(Integer, ForeignKey("patient.idpatient"))
+    fecha = Column(String)
 Base.metadata.create_all(bind=engine)
